@@ -669,6 +669,60 @@ body{background:#000!important;color:#fff!important}
 .xy-entry-auth button:active{opacity:.65}
 .xy-entry-before{margin-top:auto;padding-top:28px;color:#ff3038;font-size:clamp(28px,7vw,40px);font-style:italic;font-weight:900}
 body.xy-entry-open{overflow:hidden!important}
+
+/* XYOCK visual + interaction final pass */
+:root{--xy-ink:#f7fffd;--xy-mint:#20dfca;--xy-red:#ff3b48;--muted:#d7e2df!important}
+html,body{background:#030505!important;color:#f7fffd!important}
+body,body *{font-family:Inter,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}
+body :is(h1,h2,h3,p,span,label,small,strong,b,a,button,.bubble,.modal-title,.xy-screen-title,.xy-menu-link,.xy-setting-row){color:#f7fffd}
+body :is(.welcome p,.model-desc,.mode-indicator,.plugin-desc,.empty-message,.modal-error){color:#d7e2df!important}
+button,[role=button],a{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.xy-reference-header{position:sticky!important;top:0!important;z-index:7000!important;background:rgba(3,5,5,.96)!important;backdrop-filter:blur(20px);border-bottom:1px solid #1c3935!important}
+.xy-reference-header .xy-header-btn{color:#f7fffd!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-style:normal!important;font-weight:750!important;letter-spacing:-.3px}
+.xy-reference-header .xy-header-btn:active,.xy-menu-link:active,.xy-menu-footer button:active{transform:scale(.98);opacity:.82}
+.xy-reference-header #loginBtn{color:#06110f!important;background:#20dfca!important;border-radius:999px!important;padding:11px 18px!important;font-size:14px!important;box-shadow:0 5px 24px #20dfca30}
+.xy-screen{z-index:8000!important;background:radial-gradient(ellipse at 50% 0%,#10211e 0%,#030505 52%)!important}
+.xy-screen-title{color:#fff!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-style:normal!important}
+.xy-menu-link{color:#ff5360!important;border-bottom:1px solid #e7f0ed!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-style:normal!important;font-weight:750!important}
+.xy-menu-link:hover{color:#fff!important;background:#ffffff0a}
+.xy-setting-row{color:#ff5360!important;border-bottom:1px solid #e7f0ed!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-style:normal!important}
+.xy-setting-row button,.xy-setting-panel button{color:#f7fffd!important;background:#101a18!important;border:1px solid #35534d!important;border-radius:12px!important}
+.xy-setting-panel,.xy-setting-panel p{color:#edf8f5!important}
+.welcome h1{color:#fff!important;font-weight:800!important;letter-spacing:-1.8px!important}
+.welcome p{color:#d7e2df!important}
+.search-input{color:#fff!important}
+.search-input::placeholder{color:#b8c8c3!important}
+.input-wrapper{border:1px solid #31514b!important;background:#0b1210!important;box-shadow:0 16px 60px #000b,0 0 0 1px #20dfca12!important}
+.send-btn:disabled{opacity:.48}
+.modal-content{color:#fff!important;background:#0b1210!important;border:1px solid #31514b!important;box-shadow:0 24px 90px #000c!important}
+.modal-content :is(label,p,span,small){color:#e9f3f0!important}
+.modal-input{color:#fff!important;background:#050908!important;border-color:#36524c!important}
+#xyEntryScreen{z-index:12000!important;background:radial-gradient(ellipse at 50% 42%,#0b211e 0%,#030505 56%,#000 100%)!important;color:#20dfca!important;justify-content:flex-start}
+.xy-entry-brand{max-width:760px;padding:10px 4px 0;color:#20dfca!important;font-family:Inter,sans-serif!important;font-style:normal!important;font-size:clamp(28px,7vw,44px)!important;font-weight:850!important;letter-spacing:-1.6px!important}
+.xy-entry-brand img{width:42px;height:42px;object-fit:contain}
+.xy-entry-brand span{margin-left:auto;color:#20dfca!important}
+.xy-entry-planet{position:relative;width:min(54vw,260px)!important;aspect-ratio:1!important;margin:clamp(35px,8vh,72px) auto 0!important;border:0!important;border-radius:50%!important;background:radial-gradient(circle at 34% 28%,#d9fffa 0%,#4ee8d5 8%,#147e76 34%,#062b2a 66%,#020807 100%)!important;box-shadow:inset -22px -20px 35px #000b,0 0 55px #20dfca25!important;transform:none!important}
+.xy-entry-planet:before{content:"";position:absolute;width:145%;height:38%;border:3px solid #d9fffa;border-left-color:#20dfca;border-right-color:#20dfca;border-radius:50%;transform:rotate(-22deg);box-shadow:0 0 18px #20dfca60}
+.xy-entry-planet:after{content:"";position:absolute;width:150%;height:10%;border-radius:50%;border-top:2px solid #20dfca;transform:rotate(-22deg);opacity:.8}
+.xy-entry-planet span{display:none}
+.xy-entry-tagline{margin:clamp(30px,6vh,56px) 0 0!important;color:#20dfca!important;font-family:Inter,sans-serif!important;font-style:normal!important;font-size:clamp(24px,6vw,38px)!important;font-weight:850!important;line-height:1.25!important;letter-spacing:-1px}
+.xy-entry-auth{gap:9px!important;width:min(100%,390px)!important;margin:clamp(35px,7vh,60px) auto 14px!important}
+.xy-entry-auth button{padding:13px 16px!important;border:1px solid #245a52!important;border-radius:14px!important;background:#07110f!important;color:#20dfca!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-style:normal!important;font-size:16px!important;font-weight:750!important;letter-spacing:-.2px;transition:background .18s,border-color .18s,transform .18s}
+.xy-entry-auth button:active{background:#12332e!important;transform:scale(.98)}
+.xy-entry-before{margin-top:auto!important;margin-bottom:10px!important;padding:12px 18px!important;border:0!important;background:transparent!important;color:#ff5360!important;font-family:Inter,"Noto Sans KR",sans-serif!important;font-size:15px!important;font-style:normal!important;font-weight:750!important;text-decoration:underline;text-underline-offset:5px}
+#xyEntryScreen[hidden]{display:none!important}
+#xyEntryScreen button{position:relative;z-index:2;pointer-events:auto!important}
+.xy-header,.xy-reference-header,.chat-container,.input-section{pointer-events:auto!important}
+.xy-reference-header button,.input-section button,.modal button,.xy-screen button{pointer-events:auto!important;position:relative}
+@media(max-width:620px){
+ .xy-reference-header{height:66px!important;padding:10px 10px!important;grid-template-columns:1fr 1fr 1fr!important}
+ .xy-reference-header .xy-header-btn{font-size:14px!important}
+ .xy-reference-header #xyMenuOpen{font-size:16px!important}
+ .xy-reference-header #xySecretChat{font-size:14px!important}
+ .xy-entry-brand img{width:34px;height:34px}
+ .xy-entry-planet{width:min(52vw,220px)!important}
+ .xy-entry-auth button{font-size:15px!important}
+}
 </style>
 </head>
 
@@ -2444,8 +2498,8 @@ int main() {
 </script>
 
 <section id="xyEntryScreen" aria-label="XYOCK 시작 화면">
-  <div class="xy-entry-brand"><span>logo</span><span>xyock</span></div>
-  <button class="xy-entry-planet" id="xyEntryPlanet" type="button"><span>링 있는 행성</span></button>
+  <div class="xy-entry-brand"><img src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt="XYOCK 로고"><span>XYOCK</span></div>
+  <button class="xy-entry-planet" id="xyEntryPlanet" type="button" aria-label="XYOCK 시작하기"><span></span></button>
   <div class="xy-entry-tagline">for good and<br>coding</div>
   <div class="xy-entry-auth" aria-label="로그인 방법">
     <button type="button" data-entry-provider="github">로그인 위드 깃허브</button>
@@ -2469,17 +2523,14 @@ int main() {
   screen.querySelectorAll("[data-entry-provider]").forEach(button=>{
     button.addEventListener("click",()=>{
       const provider=button.dataset.entryProvider;
+      enter();
       if(provider==="naver"){
         const notice=document.getElementById("naverLoginNotice");
-        if(notice)notice.textContent="네이버 로그인은 아직 별도 OAuth 설정이 필요합니다.";
-        enter();
+        if(notice)notice.textContent="네이버 로그인은 별도 OAuth 설정이 완료된 뒤 사용할 수 있습니다.";
         document.getElementById("loginBtn")?.click();
         return;
       }
-      enter();
-      const target=document.getElementById(provider+"Login");
-      if(target)target.click();
-      else document.getElementById("loginBtn")?.click();
+      document.getElementById(provider+"Login")?.click();
     });
   });
   document.getElementById("xyEntryPlanet")?.addEventListener("click",enter);
