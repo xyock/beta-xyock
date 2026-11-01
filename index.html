@@ -614,6 +614,14 @@ body{background:var(--bg)!important;color:var(--text)!important;font-family:Inte
 .xy-gate{position:fixed;inset:0;z-index:5000;background:#050606;display:none;align-items:center;justify-content:center;padding:22px}.xy-gate.open{display:flex}.xy-gate-card{width:min(420px,100%);padding:30px;border:1px solid #34413d;border-radius:20px;background:#101615;color:#fff}.xy-gate-card input{width:100%;padding:13px;background:#080c0b;color:#fff;border:1px solid #394641;border-radius:10px;margin:10px 0}
 body.xy-light{color-scheme:light;background:#f4f7f6!important;color:#15201c!important}body.xy-light .xy-header{background:#ffffffed!important;border-color:#d6dfdc!important}body.xy-light .xy-brand{color:#13201b}body.xy-light .xy-header-btn{background:#fff;color:#26332e;border-color:#d6dfdc}body.xy-light .xy-screen{background:#f4f7f6;color:#15201c}body.xy-light .xy-screen-title,body.xy-light .xy-menu-link,body.xy-light .xy-menu-footer button{color:#15201c}body.xy-light .xy-menu-link{border-color:#d6dfdc}body.xy-light .xy-close,body.xy-light .xy-menu-footer button,body.xy-light .xy-setting-row button,body.xy-light .xy-setting-panel button{background:#fff;color:#26332e;border-color:#d6dfdc}body.xy-light .xy-setting-panel input{background:#fff;color:#15201c;border-color:#ccd7d2}body.xy-light .welcome h1{color:#15201c!important}body.xy-light .welcome p{color:#64736d!important}body.xy-light .input-section{background:linear-gradient(180deg,transparent,#f4f7f6 32%)!important}body.xy-light .input-wrapper{background:#fff!important;border-color:#d0dbd6!important}body.xy-light .search-input{color:#15201c!important}body.xy-light .message.user .bubble{background:#e2f3ee;color:#15201c;border-color:#c5e6dc}body.xy-light .message.ai .bubble{color:#26332e}body.xy-light .code-card{background:#fff!important;border-color:#d6dfdc!important}body.xy-light .code-card-header{background:#edf2f0!important}
 @media(max-width:620px){.xy-header{height:62px;padding:0 12px!important}.xy-brand{font-size:20px}.xy-brand .logo-img{width:28px;height:28px}.xy-header-actions{gap:5px}.xy-header-btn,.xy-login-btn{height:36px;padding:0 9px;font-size:11px}.xy-header-btn span{display:none}.chat-container{padding:28px 15px 130px!important}.welcome{padding:9vh 0 25px!important}.xy-menu-list,.xy-settings{margin-top:6vh}.xy-menu-link{padding:21px 4px}.xy-setting-row{font-size:18px}}
+
+/* Interaction recovery: keep controls clickable on touch and keyboard devices. */
+.xy-entry-before{display:block;margin-top:auto;margin-bottom:4px;padding:12px 18px;border:1px solid #20dfca;border-radius:999px;background:transparent;color:#20dfca;font:inherit;font-size:14px;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+#xyEntryScreen{pointer-events:auto}
+#xyEntryScreen button{pointer-events:auto;touch-action:manipulation;cursor:pointer}
+.xy-reference-header,.xy-reference-header button,.input-section,.input-section button{pointer-events:auto}
+.xy-screen{z-index:2600!important}
+.modal{z-index:3000!important}
 </style>
 
 <style id="xy-reference-layout">
@@ -2444,27 +2452,38 @@ int main() {
     <button type="button" data-entry-provider="naver">로그인 위드 네이버</button>
     <button type="button" data-entry-provider="google">로그인 위드 구글</button>
   </div>
-  <div class="xy-entry-before">로그인 전</div>
+  <button type="button" class="xy-entry-before" id="xyEntryContinue">로그인 없이 둘러보기</button>
 </section>
 <script id="xy-entry-screen-script">
 (()=>{
- const screen=document.getElementById("xyEntryScreen");
- if(!screen)return;
- document.body.classList.add("xy-entry-open");
- const enter=()=>{screen.hidden=true;document.body.classList.remove("xy-entry-open");};
- screen.querySelectorAll("[data-entry-provider]").forEach(button=>{
-   button.addEventListener("click",()=>{
-     const provider=button.dataset.entryProvider;
-     const target=document.getElementById(provider+"Login");
-     if(target){target.click();return;}
-     const login=document.getElementById("loginBtn");if(login)login.click();
-   });
- });
- document.getElementById("xyEntryPlanet")?.addEventListener("click",()=>{
-   const login=document.getElementById("loginBtn");if(login)login.click();
- });
- const login=document.getElementById("loginBtn");
- login?.addEventListener("click",enter,{capture:true});
+  const screen=document.getElementById("xyEntryScreen");
+  if(!screen)return;
+  const enter=()=>{
+    screen.hidden=true;
+    screen.style.display="none";
+    document.body.classList.remove("xy-entry-open");
+    document.querySelectorAll(".xy-reference-header button,.input-section button").forEach(b=>b.style.pointerEvents="auto");
+  };
+  document.body.classList.add("xy-entry-open");
+  document.getElementById("xyEntryContinue")?.addEventListener("click",enter);
+  screen.querySelectorAll("[data-entry-provider]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const provider=button.dataset.entryProvider;
+      if(provider==="naver"){
+        const notice=document.getElementById("naverLoginNotice");
+        if(notice)notice.textContent="네이버 로그인은 아직 별도 OAuth 설정이 필요합니다.";
+        enter();
+        document.getElementById("loginBtn")?.click();
+        return;
+      }
+      enter();
+      const target=document.getElementById(provider+"Login");
+      if(target)target.click();
+      else document.getElementById("loginBtn")?.click();
+    });
+  });
+  document.getElementById("xyEntryPlanet")?.addEventListener("click",enter);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!screen.hidden)enter();});
 })();
 </script>
 </body>
