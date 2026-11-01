@@ -740,10 +740,38 @@ body :is(h1,h2,h3,p,span,label,small,strong,b,a,.bubble,.modal-title,.xy-screen-
 .search-input{color:#a7adab!important}
 .search-input::placeholder{color:#8e9693!important}
 </style>
+
+<style id="xy-final-fix">
+/* Clean header: image-only logo, hamburger menu, no secret-chat control */
+.xy-reference-header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:0 16px!important;height:68px!important;position:sticky!important;top:0!important;z-index:15000!important}
+.xy-reference-header #logoBtn{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 42px!important;width:42px!important;height:42px!important;padding:4px!important;border:0!important;background:transparent!important;cursor:pointer!important;pointer-events:auto!important}
+.xy-reference-header #logoBtn .logo-img{display:block!important;width:34px!important;height:34px!important;object-fit:contain!important}
+.xy-reference-header #xyMenuOpen{font-family:Arial,sans-serif!important;font-size:30px!important;line-height:1!important;min-width:42px!important;text-align:center!important}
+.xy-reference-header #modelPickerBtn{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif!important;font-size:14px!important;white-space:nowrap!important}
+.xy-reference-header .xy-header-btn,.xy-reference-header .xy-login-btn{font-style:normal!important;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif!important}
+body,body *{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif!important;font-style:normal!important}
+.xy-screen{z-index:16000!important;pointer-events:auto!important}
+.xy-screen button,.xy-reference-header button,.input-section button,.modal button{pointer-events:auto!important;touch-action:manipulation!important}
+#xyEntryScreen[hidden]{display:none!important;pointer-events:none!important}
+#xyEntryScreen:not([hidden]){z-index:20000!important}
+html,body{--xy-current-text:#a7adab}
+body.xy-light{background:#f4f7f6!important;color:#59645f!important;color-scheme:light!important}
+body.xy-light .xy-header,body.xy-light .xy-reference-header{background:#ffffff!important;border-color:#d6dfdc!important}
+body.xy-light .xy-screen{background:#f4f7f6!important;color:#59645f!important}
+body.xy-light .xy-screen-title,body.xy-light .xy-menu-link,body.xy-light .xy-setting-row,body.xy-light .xy-setting-panel,body.xy-light .xy-setting-panel p,body.xy-light .welcome h1,body.xy-light .welcome p{color:#59645f!important}
+body.xy-light .xy-menu-link,body.xy-light .xy-setting-row{border-color:#cbd5d1!important}
+body.xy-light .xy-header-btn,body.xy-light .xy-setting-row button,body.xy-light .xy-setting-panel button,body.xy-light .xy-close{background:#fff!important;color:#59645f!important;border-color:#cbd5d1!important}
+body.xy-light .input-wrapper{background:#fff!important;border-color:#cbd5d1!important}
+body.xy-light .search-input{color:#59645f!important}
+body.xy-light .input-section{background:linear-gradient(180deg,transparent,#f4f7f6 32%)!important}
+body.xy-light .modal-content{background:#fff!important;color:#59645f!important}
+body.xy-light .modal-content *{color:#59645f!important}
+</style>
+
 </head>
 
 <body>
-  <header class="xy-header xy-reference-header"><button class="xy-header-btn" id="xyMenuOpen" type="button">메뉴바</button><button class="xy-header-btn" id="modelPickerBtn" type="button">모델 선택</button><button class="xy-header-btn" id="xySecretChat" type="button">시크릿 챗</button><span id="modeIndicator" hidden>xyock</span><button class="xy-header-btn" id="historyBtn" type="button" hidden>☷</button><button class="xy-header-btn" id="xyPluginOpen" type="button" hidden aria-haspopup="dialog" aria-controls="pluginModal">플러그인</button><button class="xy-login-btn" id="loginBtn" type="button">로그인</button></header>
+  <header class="xy-header xy-reference-header"><button class="xy-brand" id="logoBtn" type="button" aria-label="XYOCK 홈"><img class="logo-img" src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt=""/></button><button class="xy-header-btn xy-menu-trigger" id="xyMenuOpen" type="button" aria-label="메뉴 열기">☰</button><button class="xy-header-btn" id="modelPickerBtn" type="button">모델 선택</button><span id="modeIndicator" hidden>xyock</span><button class="xy-header-btn" id="historyBtn" type="button" hidden>☷</button><button class="xy-header-btn" id="xyPluginOpen" type="button" hidden aria-haspopup="dialog" aria-controls="pluginModal">플러그인</button><button class="xy-login-btn" id="loginBtn" type="button">로그인</button></header>
 
   <section class="xy-screen" id="xyMenu"><div class="xy-screen-head"><div class="xy-screen-title" data-i18n="menu">메뉴바</div><button class="xy-close" data-xy-close="xyMenu">닫기 ✕</button></div><nav class="xy-menu-list"><button class="xy-menu-link" data-xy-go="plugins"><span data-i18n="plugins">플러그인</span><span>›</span></button><button class="xy-menu-link" data-xy-go="readme">readme <span>↗</span></button><button class="xy-menu-link" data-xy-go="codes">code <span>›</span></button><button class="xy-menu-link" data-xy-go="sessions"><span data-i18n="sessions">세션</span><span>›</span></button></nav><div class="xy-menu-footer"><button data-xy-go="account" data-i18n="account">계정</button><button data-xy-go="newchat">＋ <span data-i18n="newchat">새 chat</span></button></div></section>
 <section class="xy-screen" id="xyAccount"><div class="xy-screen-head"><div class="xy-screen-title">general setting</div><button class="xy-close" data-xy-close="xyAccount">닫기 ✕</button></div><div class="xy-settings">
