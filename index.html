@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xyock beta</title>
+  <title>xyock</title>
 
-  <link rel="icon" href="/lock/favicon-3/favicon.ico?v=1" sizes="any" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/lock/favicon-3/favicon-96x96.png?v=1" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/lock/favicon-3/apple-touch-icon.png?v=1" />
+  <link rel="icon" href="https://github.com/xyock/lock" sizes="any" />
+  <link rel="icon" type="image/png" sizes="96x96" href="https://github.com/xyock/lock" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/xyock/lock" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="xyock" />
-  <link rel="manifest" href="/lock/favicon-3/site.webmanifest?v=1" />
+  <link rel="manifest"  />
   <meta name="theme-color" content="#0a0a0a" />
 
   <style>
@@ -202,7 +202,7 @@
       height: 22px;
       margin-right: 10px;
       vertical-align: middle;
-      background: url("logo.png") center / contain no-repeat;
+      background: url("https://raw.githubusercontent.com/xyock/lock/main/logo.png") center / contain no-repeat;
       animation: xyockLogoSpin 1.1s linear infinite;
     }
 
@@ -594,56 +594,42 @@
       .welcome h1 { font-size: 1.8em; }
       .modal-content { padding: 28px 20px; }
     }
-  
-:root{--beta-bg:#080808;--beta-panel:#151515;--beta-fg:#f5f5f5;--beta-line:#484848;--beta-accent:#7ae5d2}
-body{background:var(--beta-bg);color:var(--beta-fg)}
-.beta-top{display:flex;gap:8px;align-items:center}.beta-top button,.beta-close,.beta-btn{background:transparent;color:var(--beta-fg);border:1px solid var(--beta-line);border-radius:9px;padding:10px 13px;cursor:pointer}
-.beta-top button:hover,.beta-btn:hover{color:var(--beta-accent);border-color:var(--beta-accent)}
-.beta-screen{position:fixed;inset:0;z-index:3000;display:none;overflow:auto;background:var(--beta-bg);color:var(--beta-fg);padding:clamp(20px,5vw,55px)}.beta-screen.open{display:block}
-.beta-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.beta-title{font-size:clamp(28px,6vw,48px);font-weight:800}
-.beta-list,.beta-settings{max-width:850px;margin:6vh auto}.beta-item{display:flex;width:100%;justify-content:space-between;padding:24px 8px;border:0;border-bottom:1px solid var(--beta-line);background:none;color:var(--beta-fg);font-size:clamp(22px,4vw,34px);font-weight:700;text-align:left;cursor:pointer}.beta-item:hover{color:var(--beta-accent)}
-.beta-bottom{max-width:850px;margin:10vh auto 0;display:flex;justify-content:space-between}.beta-bottom button{border:0;background:none;color:var(--beta-fg);font-size:26px;font-weight:700;cursor:pointer}
-.beta-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 4px;border-bottom:1px solid var(--beta-line);font-size:clamp(19px,3.5vw,28px)}
-.beta-row button,.beta-panel button{background:transparent;color:var(--beta-fg);border:1px solid var(--beta-line);border-radius:8px;padding:9px 13px;cursor:pointer}.beta-row button.active{border-color:var(--beta-accent);color:var(--beta-accent)}
-.beta-panel{padding:15px 4px;border-bottom:1px solid var(--beta-line)}.beta-panel p{color:#aaa;line-height:1.5}.beta-panel input{max-width:420px;width:100%;padding:12px;border-radius:8px;border:1px solid #555;background:#222;color:white}.beta-panel .apply{margin:8px 8px 0 0;border-color:var(--beta-accent);color:var(--beta-accent)}
-.beta-card{padding:15px;margin:12px 0;border:1px solid var(--beta-line);border-radius:12px;background:var(--beta-panel)}.beta-card pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto}
-body.beta-light{--beta-bg:#f5f5f5;--beta-panel:#fff;--beta-fg:#171717;--beta-line:#ccc;--beta-accent:#087f70;background:var(--beta-bg);color:var(--beta-fg)}
-body.beta-light .beta-screen{background:var(--beta-bg);color:var(--beta-fg)}body.beta-light .beta-item,body.beta-light .beta-bottom button{color:var(--beta-fg)}body.beta-light .beta-panel input{background:#fff;color:#171717}
-.beta-gate{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;background:#080808;padding:20px}.beta-gate.open{display:flex}.beta-gate section{width:min(420px,100%);padding:28px;border:1px solid #444;border-radius:16px;background:#151515;color:white}
-@media(max-width:600px){.beta-top button{padding:8px;font-size:12px}.beta-bottom{margin-top:6vh}}
+  /* XYOCK BETA fresh UI */
+:root{--bg:#050606;--panel:#101313;--line:#29312f;--text:#f5f7f6;--muted:#a0aaa7;--accent:#55dbc4;color-scheme:dark}
+body{background:var(--bg)!important;color:var(--text)!important;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif!important}
+.xy-header{height:72px;padding:0 clamp(14px,4vw,48px)!important;border-bottom:1px solid var(--line)!important;background:#050606ed!important;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500}
+.xy-brand{display:flex;align-items:center;gap:10px;border:0;background:none;color:#fff;font-size:25px;font-weight:800;cursor:pointer}.xy-brand .logo-img{width:34px;height:34px;object-fit:contain}
+.xy-header-actions{display:flex;align-items:center;gap:8px}.xy-header-btn,.xy-login-btn{height:40px;padding:0 14px;border:1px solid var(--line);border-radius:11px;background:#101414;color:#e9f0ee;font-size:13px;font-weight:650;cursor:pointer}.xy-header-btn:hover{border-color:var(--accent);color:var(--accent)}.xy-login-btn{background:var(--accent);color:#04110e;border-color:var(--accent);font-weight:800}
+.chat-container{width:min(940px,100%);margin:0 auto;padding:clamp(24px,6vh,70px) clamp(16px,4vw,36px) 150px!important;gap:18px!important}
+.welcome{text-align:left!important;padding:clamp(48px,12vh,120px) 0 30px!important}.welcome h1{font-size:clamp(34px,6vw,58px)!important;font-weight:750!important;letter-spacing:-2px!important;color:#fff!important}.welcome p{font-size:15px!important;color:var(--muted)!important;margin-top:12px}
+.message.user .bubble{background:#15211f;border:1px solid #24443e;border-radius:18px 18px 5px 18px;color:#f4fffc}.message.ai .bubble{background:transparent;border:0;color:#e9eeec}.code-card{border:1px solid #303a37!important;border-radius:14px!important;background:#0b100f!important}.code-card-header{background:#141b19!important}
+.input-section{position:fixed!important;left:0;right:0;bottom:0;padding:18px 16px max(20px,env(safe-area-inset-bottom))!important;background:linear-gradient(180deg,transparent,rgba(5,6,6,.97) 30%)!important;z-index:200}
+.input-wrapper{max-width:900px!important;min-height:62px!important;border:1px solid #303b38!important;border-radius:18px!important;background:#111716!important;padding:8px 10px!important;box-shadow:0 12px 50px #0008}.search-input{color:#f4f8f6!important;background:transparent!important}.search-input::placeholder{color:#87928e!important}.send-btn{background:var(--accent)!important;color:#03110e!important;border:0!important}.plugin-btn{background:#1c2926!important;color:var(--accent)!important}
+.modal{z-index:1800!important}.modal-content{background:#101615!important;color:#f4f7f5!important;border:1px solid #303b38!important;border-radius:18px!important}
+.xy-screen{position:fixed;inset:0;z-index:1600;display:none;overflow:auto;background:#070909;color:#f5f7f6;padding:clamp(20px,5vw,52px)}.xy-screen.open{display:block}.xy-screen-head{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:900px;margin:0 auto}.xy-screen-title{font-size:clamp(30px,6vw,52px);font-weight:850;letter-spacing:-1.8px}.xy-close{border:1px solid #303b38;background:#111716;color:#fff;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer}
+.xy-menu-list,.xy-settings{max-width:900px;margin:8vh auto 0}.xy-menu-link{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:25px 6px;background:transparent;border:0;border-bottom:1px solid #28302e;color:#f3f6f5;font-size:clamp(22px,4vw,34px);font-weight:750;cursor:pointer}.xy-menu-link:hover{color:var(--accent)}.xy-menu-footer{max-width:900px;margin:12vh auto 0;display:flex;justify-content:space-between}.xy-menu-footer button{border:1px solid #303b38;background:#111716;color:#fff;border-radius:12px;padding:14px 20px;font-size:17px;font-weight:700;cursor:pointer}
+.xy-setting-row{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;padding:24px 4px;border-bottom:1px solid #29312f;font-size:clamp(18px,3.4vw,25px);font-weight:700}.xy-setting-row button,.xy-setting-panel button{padding:10px 14px;border:1px solid #38423f;border-radius:10px;background:#121817;color:#f4f7f5;cursor:pointer;font-size:14px}.xy-setting-row button.active,.xy-setting-panel button.xy-primary{border-color:var(--accent);background:#14312c;color:var(--accent)}
+.xy-setting-panel{padding:18px 4px 24px;border-bottom:1px solid #29312f;color:#b9c3bf}.xy-setting-panel p{margin:0 0 12px;line-height:1.6}.xy-setting-panel input{display:block;width:min(460px,100%);padding:13px 14px;border:1px solid #38423f;border-radius:10px;background:#0e1312;color:#fff;font-size:16px;margin:8px 0}.xy-setting-panel a{color:var(--accent)}.xy-logo-preview{width:42px;height:42px;object-fit:contain}
+.xy-code-entry{border:1px solid #293532;border-radius:14px;background:#111716;padding:16px;margin:12px 0}.xy-code-entry pre{white-space:pre-wrap;overflow:auto;max-height:260px;font-size:12px}
+.xy-gate{position:fixed;inset:0;z-index:5000;background:#050606;display:none;align-items:center;justify-content:center;padding:22px}.xy-gate.open{display:flex}.xy-gate-card{width:min(420px,100%);padding:30px;border:1px solid #34413d;border-radius:20px;background:#101615;color:#fff}.xy-gate-card input{width:100%;padding:13px;background:#080c0b;color:#fff;border:1px solid #394641;border-radius:10px;margin:10px 0}
+body.xy-light{color-scheme:light;background:#f4f7f6!important;color:#15201c!important}body.xy-light .xy-header{background:#ffffffed!important;border-color:#d6dfdc!important}body.xy-light .xy-brand{color:#13201b}body.xy-light .xy-header-btn{background:#fff;color:#26332e;border-color:#d6dfdc}body.xy-light .xy-screen{background:#f4f7f6;color:#15201c}body.xy-light .xy-screen-title,body.xy-light .xy-menu-link,body.xy-light .xy-menu-footer button{color:#15201c}body.xy-light .xy-menu-link{border-color:#d6dfdc}body.xy-light .xy-close,body.xy-light .xy-menu-footer button,body.xy-light .xy-setting-row button,body.xy-light .xy-setting-panel button{background:#fff;color:#26332e;border-color:#d6dfdc}body.xy-light .xy-setting-panel input{background:#fff;color:#15201c;border-color:#ccd7d2}body.xy-light .welcome h1{color:#15201c!important}body.xy-light .welcome p{color:#64736d!important}body.xy-light .input-section{background:linear-gradient(180deg,transparent,#f4f7f6 32%)!important}body.xy-light .input-wrapper{background:#fff!important;border-color:#d0dbd6!important}body.xy-light .search-input{color:#15201c!important}body.xy-light .message.user .bubble{background:#e2f3ee;color:#15201c;border-color:#c5e6dc}body.xy-light .message.ai .bubble{color:#26332e}body.xy-light .code-card{background:#fff!important;border-color:#d6dfdc!important}body.xy-light .code-card-header{background:#edf2f0!important}
+@media(max-width:620px){.xy-header{height:62px;padding:0 12px!important}.xy-brand{font-size:20px}.xy-brand .logo-img{width:28px;height:28px}.xy-header-actions{gap:5px}.xy-header-btn,.xy-login-btn{height:36px;padding:0 9px;font-size:11px}.xy-header-btn span{display:none}.chat-container{padding:28px 15px 130px!important}.welcome{padding:9vh 0 25px!important}.xy-menu-list,.xy-settings{margin-top:6vh}.xy-menu-link{padding:21px 4px}.xy-setting-row{font-size:18px}}
 </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo" id="logoBtn" title="새로고침">
-      <img class="logo-img" src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt="" />xyock
-    </div>
+  <header class="xy-header"><button class="xy-brand" id="logoBtn" title="홈"><img class="logo-img" src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt=""><span>xyock</span></button><div class="xy-header-actions"><button class="xy-header-btn" id="xyMenuOpen">☰ <span data-i18n="menu">메뉴바</span></button><button class="xy-header-btn" id="modelPickerBtn">✧ <span data-i18n="model">모델</span></button><button class="xy-header-btn" id="pluginBtn" aria-haspopup="dialog" aria-controls="pluginModal">⌘ <span data-i18n="plugin">플러그인</span></button><button class="xy-login-btn" id="loginBtn">locked</button></div></header>
 
-    <div class="header-icons">
-      <span class="mode-indicator" id="modeIndicator">xyock</span>
-      <div class="auth-col">
-        <button class="icon-btn" id="historyBtn" type="button" title="대화 기록" aria-label="대화 기록">☰</button>
-        <button class="model-picker-btn" id="modelPickerBtn" type="button" title="AI 모델 선택" aria-label="AI 모델 선택"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 14.8 9.2 21.2 12 14.8 14.8 12 21.2 9.2 14.8 2.8 12 9.2 9.2Z"/><path d="M19 2.5 19.9 4.6 22 5.5 19.9 6.4 19 8.5 18.1 6.4 16 5.5 18.1 4.6Z"/></svg></button>
-        <button class="login-btn" id="loginBtn" type="button">locked</button>
-      </div>
-    </div>
-  <div class="beta-top"><button id="betaMenuOpen" type="button">메뉴바</button><button id="betaSecretOpen" type="button">시크릿 챗</button></div></header>
-
-  
-<section class="beta-screen" id="betaMenu"><div class="beta-head"><div class="beta-title">메뉴바</div><button class="beta-close" data-close="betaMenu">닫기 ✕</button></div><nav class="beta-list">
-<button class="beta-item" data-go="readme">readme <span>↗</span></button><button class="beta-item" data-go="plugins">플러그인 <span>›</span></button><button class="beta-item" data-go="codes">code (AI가 작성했던 모든 코드) <span>›</span></button><button class="beta-item" data-go="sessions">세션 <span>›</span></button></nav><div class="beta-bottom"><button data-go="account">계정</button><button data-go="newchat">새 chat ＋</button></div></section>
-<section class="beta-screen" id="betaAccount"><div class="beta-head"><div class="beta-title">general setting</div><button class="beta-close" data-close="betaAccount">닫기 ✕</button></div><div class="beta-settings">
-<div class="beta-row"><span>Language</span><span><button data-lang="ko">한국어</button> <button data-lang="en">English</button></span></div>
-<div class="beta-row"><span>plugin</span><span>›</span></div><div class="beta-panel"><div class="beta-card"><b>GitHub</b><p>xyock/lock README 및 코드 저장소</p><a href="https://github.com/xyock/lock" target="_blank" rel="noopener">저장소 열기</a></div><div class="beta-card"><b>Supabase</b><p>기존 XYOCK 앱의 Supabase 설정을 사용합니다.</p><a href="https://supabase.com/dashboard" target="_blank" rel="noopener">Supabase 열기</a></div><p>플러그인 권한 연결은 각 서비스에서 별도로 승인해야 합니다.</p></div>
-<div class="beta-row"><span>passwords</span><span>›</span></div><div class="beta-panel"><p>이 브라우저에서 사이트를 열 때 사용할 암호입니다. 정적 사이트의 화면 잠금으로, 강력한 서버 인증을 대체하지 않습니다.</p><input id="betaPass" type="password" autocomplete="new-password" placeholder="암호 입력"><button class="apply" id="betaPassApply">Apply</button><button id="betaPassRemove">암호 해제</button></div>
-<div class="beta-row"><span>theme</span><span><button data-theme="light">Light</button> <button data-theme="dark">Dark</button></span></div>
-<div class="beta-row"><span>account</span><span>›</span></div><div class="beta-panel"><p>환영 문구에 표시할 닉네임</p><input id="betaNick" maxlength="24" placeholder="닉네임"><button class="apply" id="betaNickSave">저장</button></div>
-<div class="beta-row"><span>xyock logo</span><img src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt="xyock logo" width="48" height="48" style="object-fit:contain"></div>
-</div></section>
-<section class="beta-screen" id="betaCodes"><div class="beta-head"><div class="beta-title">code</div><button class="beta-close" data-close="betaCodes">닫기 ✕</button></div><div class="beta-settings"><p>AI가 작성한 코드 기록</p><div id="betaCodeList"></div></div></section>
-<div class="beta-gate" id="betaGate"><section><h2>xyock</h2><p>암호를 입력하세요.</p><input id="betaGatePass" type="password" placeholder="암호" style="width:100%;padding:12px"><button id="betaGateEnter" class="apply" style="width:100%;margin-top:12px">들어가기</button><p id="betaGateError"></p></section></div>
-<div class="chat-container" id="chat">
+  <section class="xy-screen" id="xyMenu"><div class="xy-screen-head"><div class="xy-screen-title" data-i18n="menu">메뉴바</div><button class="xy-close" data-xy-close="xyMenu">닫기 ✕</button></div><nav class="xy-menu-list"><button class="xy-menu-link" data-xy-go="readme">readme <span>↗</span></button><button class="xy-menu-link" data-xy-go="plugins"><span data-i18n="plugins">플러그인</span><span>›</span></button><button class="xy-menu-link" data-xy-go="codes">code <span>›</span></button><button class="xy-menu-link" data-xy-go="sessions"><span data-i18n="sessions">세션</span><span>›</span></button></nav><div class="xy-menu-footer"><button data-xy-go="account" data-i18n="account">계정</button><button data-xy-go="newchat">＋ <span data-i18n="newchat">새 chat</span></button></div></section>
+<section class="xy-screen" id="xyAccount"><div class="xy-screen-head"><div class="xy-screen-title">general setting</div><button class="xy-close" data-xy-close="xyAccount">닫기 ✕</button></div><div class="xy-settings">
+<div class="xy-setting-row"><span>Language</span><span><button data-xy-lang="ko">한국어</button> <button data-xy-lang="en">English</button></span></div>
+<div class="xy-setting-row"><span>plugin</span><span>›</span></div><div class="xy-setting-panel"><p>연결된 서비스 및 플러그인 관리</p><button id="xyOpenPlugins" class="xy-primary">플러그인 관리 열기</button><div style="margin-top:16px"><p><b>GitHub</b> — <a href="https://github.com/xyock/lock" target="_blank" rel="noopener">xyock/lock 저장소</a></p><p><b>Supabase</b> — 기존 XYOCK 데이터 및 인증 연결</p></div></div>
+<div class="xy-setting-row"><span>passwords</span><span>›</span></div><div class="xy-setting-panel"><p>사이트 방문 시 입력할 암호를 설정합니다. 브라우저에 저장되는 화면 잠금이며 서버 인증을 대체하지 않습니다.</p><input id="xyPassword" type="password" autocomplete="new-password" placeholder="새 암호 (4자 이상)"><button id="xyApplyPassword" class="xy-primary">Apply</button> <button id="xyRemovePassword">암호 해제</button></div>
+<div class="xy-setting-row"><span>theme</span><span><button data-xy-theme="light">Light</button> <button data-xy-theme="dark">Dark</button></span></div>
+<div class="xy-setting-row"><span>account</span><span>›</span></div><div class="xy-setting-panel"><p>닉네임 설정 — 환영 문구에 표시됩니다.</p><input id="xyNickname" maxlength="28" placeholder="닉네임"><button id="xySaveNickname" class="xy-primary">저장</button></div>
+<div class="xy-setting-row"><span>xyock logo</span><img class="xy-logo-preview" src="https://raw.githubusercontent.com/xyock/lock/main/logo.png" alt="xyock logo"></div></div></section>
+<section class="xy-screen" id="xyCodes"><div class="xy-screen-head"><div class="xy-screen-title">code</div><button class="xy-close" data-xy-close="xyCodes">닫기 ✕</button></div><div class="xy-settings"><p>이 브라우저에서 생성한 코드 기록</p><div id="xyCodeList"></div></div></section>
+<div class="xy-gate" id="xyGate"><div class="xy-gate-card"><h1>xyock</h1><p>계속하려면 암호를 입력하세요.</p><input id="xyGateInput" type="password" placeholder="암호"><button id="xyGateSubmit" class="xy-primary" style="width:100%;padding:13px;border-radius:10px">입장</button><p id="xyGateError" role="alert"></p></div></div><div class="chat-container" id="chat">
     <div class="welcome" id="welcome">
       <h1>How can I help?</h1>
       <p>Ask xyock about anything, explain code, or get help writing code</p>
@@ -1294,25 +1280,27 @@ console.log(arr.sort((a, b) => a - b));`,
           html: `import java.net.http.*;
 public class HTMLTest {
   public static void main(String[] args) {
-    String html = "<html><body><h1>Hello from Java</h1>
-<script>
-(()=>{const $=id=>document.getElementById(id),K={nick:"xyock_beta_nick",theme:"xyock_beta_theme",lang:"xyock_beta_lang",pass:"xyock_beta_pass",codes:"xyock_beta_codes"};
-const get=(k,d="")=>localStorage.getItem(k)||d,set=(k,v)=>localStorage.setItem(k,v);
-function close(){["betaMenu","betaAccount","betaCodes"].forEach(id=>$(id).classList.remove("open"))}function open(id){close();$(id).classList.add("open")}
-function theme(){document.body.classList.toggle("beta-light",get(K.theme,"dark")==="light")}
-function welcome(){const h=$("#welcome h1"),p=$("#welcome p");if(h){const n=get(K.nick).trim(),en=get(K.lang,"ko")==="en";h.textContent=en?(n?"Welcome, "+n+"!":"How can I help?"):(n?"환영합니다, "+n+"!":"무엇을 도와드릴까요?");if(p)p.textContent=en?"Ask xyock anything or create code in any language":"무엇이든 질문하거나 원하는 언어로 코드를 작성해 보세요"}}
-const enc=new TextEncoder();async function digest(pass,salt){const key=await crypto.subtle.importKey("raw",enc.encode(pass),"PBKDF2",false,["deriveBits"]);const bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt:enc.encode(salt),iterations:160000,hash:"SHA-256"},key,256);return [...new Uint8Array(bits)].map(x=>x.toString(16).padStart(2,"0")).join("")}
-async function verify(){const raw=get(K.pass);if(!raw)return;$("#betaGate").classList.add("open");async function go(){try{const saved=JSON.parse(raw),v=await digest($("#betaGatePass").value,saved.salt);if(v===saved.hash)$("#betaGate").classList.remove("open");else $("#betaGateError").textContent="암호가 올바르지 않습니다."}catch{$("#betaGateError").textContent="암호 확인 실패"}}$("#betaGateEnter").onclick=go;$("#betaGatePass").onkeydown=e=>{if(e.key==="Enter")go()}}
-$("#betaMenuOpen").onclick=()=>open("betaMenu");$("#betaSecretOpen").onclick=()=>{if(typeof startNewConversation==="function")startNewConversation();alert("새 대화를 시작했습니다. 민감한 정보는 입력하지 마세요.")};
-document.addEventListener("click",e=>{const c=e.target.closest("[data-close]");if(c)close();const g=e.target.closest("[data-go]");if(!g)return;const a=g.dataset.go;if(a==="readme")window.open("https://github.com/xyock/lock#readme","_blank","noopener");if(a==="plugins"){open("betaAccount");document.querySelectorAll(".beta-row")[1].scrollIntoView({behavior:"smooth"})}if(a==="codes"){open("betaCodes");renderCodes()}if(a==="sessions"){close();$("#historyBtn")?.click()}if(a==="account")open("betaAccount");if(a==="newchat"){close();if(typeof startNewConversation==="function")startNewConversation();welcome()}});
-document.querySelectorAll("[data-theme]").forEach(b=>b.onclick=()=>{set(K.theme,b.dataset.theme);theme();document.querySelectorAll("[data-theme]").forEach(x=>x.classList.toggle("active",x===b))});
-document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>{set(K.lang,b.dataset.lang);welcome();document.querySelectorAll("[data-lang]").forEach(x=>x.classList.toggle("active",x===b));$("#betaMenuOpen").textContent=b.dataset.lang==="ko"?"메뉴바":"Menu";$("#betaSecretOpen").textContent=b.dataset.lang==="ko"?"시크릿 챗":"Secret chat"});
-$("#betaNickSave").onclick=()=>{set(K.nick,$("#betaNick").value.trim());welcome();alert("닉네임을 저장했습니다.")};
-$("#betaPassApply").onclick=async()=>{const p=$("#betaPass").value;if(p.length<4){alert("암호는 4자 이상 입력하세요.");return}const salt=crypto.getRandomValues(new Uint8Array(16)),s=[...salt].map(x=>x.toString(16).padStart(2,"0")).join("");set(K.pass,JSON.stringify({salt:s,hash:await digest(p,s)}));$("#betaPass").value="";alert("암호 저장 완료. 다음 방문부터 잠금 화면이 표시됩니다.")};
-$("#betaPassRemove").onclick=()=>{localStorage.removeItem(K.pass);alert("암호를 해제했습니다.")};
-function renderCodes(){const root=$("#betaCodeList");root.replaceChildren();let arr=[];try{arr=JSON.parse(get(K.codes,"[]"))}catch{}if(!arr.length){root.textContent="아직 저장된 코드가 없습니다.";return}arr.slice().reverse().forEach(x=>{const card=document.createElement("article");card.className="beta-card";const b=document.createElement("b");b.textContent="code · "+new Date(x.time).toLocaleString();const pre=document.createElement("pre");pre.textContent=x.code;const cp=document.createElement("button");cp.textContent="복사";cp.onclick=()=>navigator.clipboard?.writeText(x.code);card.append(b,pre,cp);root.append(card)})}
-const chat=$("#chat");if(chat)new MutationObserver(()=>chat.querySelectorAll(".code-card pre code").forEach(pre=>{if(pre.dataset.betaSaved)return;pre.dataset.betaSaved="1";let a=[];try{a=JSON.parse(get(K.codes,"[]"))}catch{}a.push({code:pre.textContent,time:Date.now()});set(K.codes,JSON.stringify(a.slice(-80)))})).observe(chat,{childList:true,subtree:true});
-theme();$("#betaNick").value=get(K.nick);welcome();verify();
+    String html = "<html><body><h1>Hello from Java</h1><script id="xyock-beta-ui">
+(()=>{"use strict";const $=id=>document.getElementById(id),K={nick:"xyock_beta_nickname_v2",theme:"xyock_beta_theme_v2",lang:"xyock_beta_language_v2",pass:"xyock_beta_password_v2",codes:"xyock_beta_code_history_v2"},get=(k,d="")=>localStorage.getItem(k)||d,set=(k,v)=>localStorage.setItem(k,v);
+const T={ko:{menu:"메뉴바",model:"모델",plugin:"플러그인",plugins:"플러그인",sessions:"세션",account:"계정",newchat:"새 chat",welcome:"무엇을 도와드릴까요?",sub:"무엇이든 질문하거나 코드를 작성해 보세요"},en:{menu:"Menu",model:"Model",plugin:"Plugins",plugins:"Plugins",sessions:"Sessions",account:"Account",newchat:"New chat",welcome:"How can I help?",sub:"Ask anything or get help writing code"}};
+const language=()=>get(K.lang,"ko"),close=()=>["xyMenu","xyAccount","xyCodes"].forEach(id=>$(id)?.classList.remove("open")),open=id=>{close();$(id)?.classList.add("open")};
+function applyLanguage(){const t=T[language()];document.querySelectorAll("[data-i18n]").forEach(el=>{if(t[el.dataset.i18n])el.textContent=t[el.dataset.i18n]});const w=$("welcome");if(w){const title=w.querySelector("h1"),sub=w.querySelector("p"),n=get(K.nick).trim();if(title)title.textContent=n?(language()==="ko"?"환영합니다, "+n+"!":"Welcome, "+n+"!"):t.welcome;if(sub)sub.textContent=t.sub}const inp=$("searchInput");if(inp)inp.placeholder=language()==="ko"?"질문하거나 코드를 요청하세요...":"Ask a question or request code"}
+function setTheme(v){set(K.theme,v);document.body.classList.toggle("xy-light",v==="light");document.querySelectorAll("[data-xy-theme]").forEach(b=>b.classList.toggle("active",b.dataset.xyTheme===v))}
+$("xyMenuOpen").addEventListener("click",()=>open("xyMenu"));
+document.addEventListener("click",e=>{const c=e.target.closest("[data-xy-close]");if(c){close();return}const g=e.target.closest("[data-xy-go]");if(!g)return;switch(g.dataset.xyGo){case"readme":window.open("https://github.com/xyock/lock#readme","_blank","noopener");break;case"plugins":open("xyAccount");$("xyOpenPlugins").scrollIntoView({behavior:"smooth",block:"center"});break;case"account":open("xyAccount");break;case"codes":open("xyCodes");renderCodes();break;case"sessions":close();$("historyBtn")?.click();break;case"newchat":close();$("logoBtn")?.click();break}});
+$("xyOpenPlugins").addEventListener("click",()=>$("pluginBtn")?.click());
+document.querySelectorAll("[data-xy-theme]").forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.xyTheme)));
+document.querySelectorAll("[data-xy-lang]").forEach(b=>b.addEventListener("click",()=>{set(K.lang,b.dataset.xyLang);document.querySelectorAll("[data-xy-lang]").forEach(x=>x.classList.toggle("active",x===b));applyLanguage()}));
+$("xyNickname").value=get(K.nick);$("xySaveNickname").addEventListener("click",()=>{set(K.nick,$("xyNickname").value.trim());applyLanguage();alert(language()==="ko"?"닉네임을 저장했습니다.":"Nickname saved.")});
+const enc=new TextEncoder();async function hash(p,s){const key=await crypto.subtle.importKey("raw",enc.encode(p),"PBKDF2",false,["deriveBits"]),bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt:enc.encode(s),iterations:150000,hash:"SHA-256"},key,256);return Array.from(new Uint8Array(bits),b=>b.toString(16).padStart(2,"0")).join("")}
+$("xyApplyPassword").addEventListener("click",async()=>{const p=$("xyPassword").value;if(p.length<4){alert("암호를 4자 이상 입력하세요.");return}const salt=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,"0")).join("");set(K.pass,JSON.stringify({salt,hash:await hash(p,salt)}));$("xyPassword").value="";alert("암호가 저장되었습니다.")});
+$("xyRemovePassword").addEventListener("click",()=>{localStorage.removeItem(K.pass);alert("암호를 해제했습니다.")});
+async function gate(){let cfg;try{cfg=JSON.parse(get(K.pass));if(!cfg)return}catch{return} $("xyGate").classList.add("open");const verify=async()=>{if(await hash($("xyGateInput").value,cfg.salt)===cfg.hash){$("xyGate").classList.remove("open");$("xyGateInput").value="";$("xyGateError").textContent=""}else $("xyGateError").textContent="암호가 올바르지 않습니다."};$("xyGateSubmit").onclick=verify;$("xyGateInput").onkeydown=e=>{if(e.key==="Enter")verify()}}
+function readCodes(){try{return JSON.parse(get(K.codes,"[]"))}catch{return[]}}
+function renderCodes(){const root=$("xyCodeList");root.replaceChildren();const items=readCodes();if(!items.length){root.textContent="아직 저장된 코드가 없습니다.";return}items.slice().reverse().forEach(item=>{const card=document.createElement("article");card.className="xy-code-entry";const title=document.createElement("b");title.textContent=(item.lang||"code")+" · "+new Date(item.time).toLocaleString();const pre=document.createElement("pre");pre.textContent=item.code;const btn=document.createElement("button");btn.textContent="복사";btn.onclick=()=>navigator.clipboard?.writeText(item.code);card.append(title,pre,btn);root.append(card)})}
+function collectCodes(){document.querySelectorAll("#chat .code-card").forEach(card=>{const code=card.querySelector("pre code");if(!code||!code.textContent.trim()||card.dataset.xySaved)return;const list=readCodes();list.push({lang:card.querySelector(".code-card-language")?.textContent||"code",code:code.textContent,time:Date.now()});set(K.codes,JSON.stringify(list.slice(-100)));card.dataset.xySaved="1"})}
+new MutationObserver(collectCodes).observe($("chat"),{childList:true,subtree:true,characterData:true});
+setTheme(get(K.theme,"dark"));applyLanguage();gate();
 })();
 </script></body></html>";
     System.out.println(html);
