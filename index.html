@@ -804,8 +804,8 @@ body.xy-entry-open{overflow:hidden!important}
   <div class="toast" id="toast"></div>
 
   <script>
-    const SUPABASE_URL = "https://lhbdijxjnqbzmrvrvrkr.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_e3oKyICzmGvyx1FFcO1dMQ_39veE0G4";
+    const SUPABASE_URL = "https://qtitcrcdqoqyjdpyvqiw.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_E6nsKI8HlhQRn9qhD3_BGA_lyz0NZoa";
     const TABLE_URL = `${SUPABASE_URL}/rest/v1/terms`;
     const CONVERSATIONS_URL = `${SUPABASE_URL}/rest/v1/chat_conversations`;
     let currentConversationId = null;
@@ -1054,51 +1054,14 @@ body.xy-entry-open{overflow:hidden!important}
     }
 
     async function login(email, password) {
-      const headers = {
-        apikey: SUPABASE_ANON_KEY,
-        "Content-Type": "application/json"
-      };
-
-      const res = await fetch(`${FN_URL}/request-login`, {
-        method: "POST",
-        headers,
-        body: JSON.stringify({ email, password })
-      });
-
-      if (res.status === 401) throw new Error("invalid");
-      if (!res.ok) throw new Error(`request-login HTTP ${res.status}`);
-
-      const { request_id, poll_token } = await res.json();
-      const deadline = Date.now() + LOGIN_TIMEOUT_MS;
-
-      while (Date.now() < deadline) {
-        await new Promise((r) => setTimeout(r, LOGIN_POLL_MS));
-
-        const r2 = await fetch(`${FN_URL}/check-login`, {
-          method: "POST",
-          headers,
-          body: JSON.stringify({ request_id, poll_token })
-        });
-
-        if (!r2.ok) throw new Error(`check-login HTTP ${r2.status}`);
-
-        const d = await r2.json().catch(() => ({}));
-
-        if (d.status === "approved") {
-          saveSession(toSession({
-            access_token: d.access_token,
-            refresh_token: d.refresh_token,
-            expires_in: d.expires_in,
-            user: d.user
-          }, email));
-          return;
-        }
-
-        if (d.status === "rejected") throw new Error("rejected");
-        if (d.status === "expired") throw new Error("expired");
+      try {
+        const data = await postAuth("password", { email, password });
+        saveSession(toSession(data, email));
+      } catch (error) {
+        const message = String(error?.message || "");
+        if (/HTTP 400|HTTP 401/.test(message)) throw new Error("invalid");
+        throw error;
       }
-
-      throw new Error("timeout");
     }
 
     async function revokeRemoteSession() {
@@ -1161,16 +1124,13 @@ body.xy-entry-open{overflow:hidden!important}
       }
 
       loginPending = true;
-      errEl.textContent = "메일에서 승인을 기다리는 중...";
+      errEl.textContent = "Supabase 계정 확인 중...";
 
       try {
         await login(email, password);
       } catch (e) {
         const msg = {
-          invalid: "이메일 또는 비밀번호가 올바르지 않습니다.",
-          rejected: "로그인이 거절되었습니다.",
-          expired: "승인 시간이 지났습니다. 다시 시도해 주세요.",
-          timeout: "승인 시간이 지났습니다. 다시 시도해 주세요."
+          invalid: "이메일 또는 비밀번호가 올바르지 않습니다. 계정이 없다면 먼저 회원가입해 주세요."
         }[e.message] || "서버 오류가 발생했습니다.";
 
         errEl.textContent = msg + " [" + e.message + "]";
